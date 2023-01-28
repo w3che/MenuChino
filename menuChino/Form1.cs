@@ -293,7 +293,7 @@ namespace menuChino
 
             if (validarBase == true && validarTopping == true && validarProteina == true && validarCrujientes == true && validarAderezos == true)
             {
-                MessageBox.Show("Orden generada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Orden generada", "Orden", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 string pedido1 = "";
                 for (int i = 0; i < 4; i++)
@@ -339,7 +339,11 @@ namespace menuChino
                         pedido5 = pedido5 + "\n" + pedidoAderezos[i];
                     }
                 }
-                MessageBox.Show("<< Base >>\n" + pedido1 + "\n\n<< Topping >>" + pedido2 + "\n\n<< Proteina >>" + pedido3 + "\n\n<< Crujientes >>" + pedido4 + "\n\n<< Aderezos >>" + pedido5, "Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult dialogResult = MessageBox.Show("La orden que seleccionaste es la siguiente: \n\n<< Base >>\n" + pedido1 + "\n\n<< Topping >>" + pedido2 + "\n\n<< Proteina >>" + pedido3 + "\n\n<< Crujientes >>" + pedido4 + "\n\n<< Aderezos >>" + pedido5 + "\n\n ¿Tu orden es correcta?", "Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show("Orden ha sido generada", "Orden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
