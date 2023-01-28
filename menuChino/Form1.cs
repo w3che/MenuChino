@@ -183,6 +183,31 @@ namespace menuChino
             return cont;
         }
 
+        private void borrarSeleccion()
+        {
+            baseArroz.Checked = false;
+            baseTallarines.Checked = false;
+            baseFideos.Checked = false;
+            baseLechuga.Checked = false;
+            toppingMango.Checked = false;
+            toppingDurazno.Checked = false;
+            toppingTomate.Checked = false;
+            toppingEdamame.Checked = false;
+            toppingChampinones.Checked = false;
+            proteinaPollo.Checked = false;
+            proteinaCerdo.Checked = false;
+            proteinaRolloP.Checked = false;
+            proteinaSurimi.Checked = false;
+            crujientesArandano.Checked = false;
+            crujientesAmaranto.Checked = false;
+            crujientesCacahuate.Checked = false;
+            crujientesSemillaG.Checked = false;
+            aderezoHKE.Checked = false;
+            aderezoAgridulce.Checked = false;
+            aderezoSoya.Checked = false;
+            aderezoChileSeco.Checked = false;
+        }
+
         private void btnOrdenar_Click(object sender, EventArgs e)
         {
             int contBase = 0;
@@ -293,7 +318,6 @@ namespace menuChino
 
             if (validarBase == true && validarTopping == true && validarProteina == true && validarCrujientes == true && validarAderezos == true)
             {
-                //MessageBox.Show("Orden generada", "Orden", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 string pedido1 = "";
                 for (int i = 0; i < 4; i++)
@@ -343,6 +367,7 @@ namespace menuChino
                 if (dialogResult == DialogResult.Yes)
                 {
                     MessageBox.Show("Orden ha sido generada", "Orden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    borrarSeleccion();
                 }
             }
             else
