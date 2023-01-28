@@ -363,16 +363,16 @@ namespace menuChino
                         pedido5 = pedido5 + "\n" + pedidoAderezos[i];
                     }
                 }
-                DialogResult dialogResult = MessageBox.Show("La orden que seleccionaste es la siguiente: \n\n<< Base >>\n" + pedido1 + "\n\n<< Topping >>" + pedido2 + "\n\n<< Proteina >>" + pedido3 + "\n\n<< Crujientes >>" + pedido4 + "\n\n<< Aderezos >>" + pedido5 + "\n\n ¿Tu orden es correcta?", "Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (dialogResult == DialogResult.Yes)
+                DialogResult result = MessageBox.Show("La orden que seleccionaste es la siguiente: \n\n<< Base >>\n" + pedido1 + "\n\n<< Topping >>" + pedido2 + "\n\n<< Proteina >>" + pedido3 + "\n\n<< Crujientes >>" + pedido4 + "\n\n<< Aderezos >>" + pedido5 + "\n\n ¿Tu orden es correcta?", "Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Orden ha sido generada", "Orden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La orden ha sido generada", "Orden", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     borrarSeleccion();
                 }
             }
             else
             {
-                MessageBox.Show("Porfavor revisa tu pedido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Porfavor revisa tu orden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
